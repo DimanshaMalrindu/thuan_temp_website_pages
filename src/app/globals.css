@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.required::after {
+  content: '*';
+  color: #FF0000;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +23,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .charging-process {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
