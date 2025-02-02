@@ -111,7 +111,7 @@ export default function Contact() {
   return (
     <>
       <div className="relative h-screen w-auto">
-        <div className="relative lg:h-2/3 md:h-80 lg:h-96 h-72">
+        <div className="relative lg:h-96 md:h-80 h-72">
           <Image
             src="/assets/ev_charger_3.jpg"
             alt="EV Charger"
@@ -128,7 +128,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="pt-5 pb-5">
-          <p className="lg:pl-28 px-6 text-sm md:text-base text-gray-600 md:space-x-5 space-x-3">
+          <p className="lg:pl-28 2xl:px-40 px-6 text-sm md:text-base text-gray-600 md:space-x-5 space-x-3">
             <Link
               href="/"
               className="hover:underline hover:text-green-600 hover:underline-offset-4 transition-colors duration-400"
@@ -151,13 +151,13 @@ export default function Contact() {
             </Link>
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row justify-evenly lg:gap-4 pt-4 lg:pr-20">
-          <div className="lg:pr-16 p-5">
-            <p className="font-bold text-3xl max-w-sm">Together, we charge business</p>
+        <div className="flex flex-col lg:flex-row justify-between lg:mt-5 lg:p-0 p-6">
+          <div className="xl:px-28 2xl:pl-40 lg:mx-auto xl:mx-0 lg:w-1/5 xl:w-2/5">
+            <p className="font-bold text-3xl lg:text-2xl xl:text-3xl">Together, we charge business</p>
             <p className="pt-6">Leave us a message and we will contact you later on</p>
           </div>
-          <div>
-            <form onSubmit={handleFormSubmit} className="lg:w-96 p-6">
+          <div className="xl:w-2/5 pt-7 lg:pt-0 lg:mx-auto">
+            <form onSubmit={handleFormSubmit} className="">
               <div className="flex flex-col pb-7">
                 <label htmlFor="name" className="required font-semibold">
                   Name
@@ -166,7 +166,7 @@ export default function Contact() {
                   type="text"
                   name="name"
                   id="name"
-                  className={`border shadow rounded-sm p-1 w-full ${errorMessage.name ? 'border-red-500' : ''}`}
+                  className={`border shadow rounded-sm p-1 ${errorMessage.name ? 'border-red-500' : ''}`}
                   onChange={({ target }) => setFormData({...formData, name: target.value})}
                   
                 />
@@ -182,7 +182,7 @@ export default function Contact() {
                   type="text"
                   name="email"
                   id="email"
-                  className={`border shadow rounded-sm p-1 w-full ${errorMessage.email ? 'border-red-500' : ''}`}
+                  className={`border shadow rounded-sm p-1 ${errorMessage.email ? 'border-red-500' : ''}`}
                   onChange={({ target }) => setFormData({...formData, email: target.value})}
                   
                 />
@@ -208,18 +208,18 @@ export default function Contact() {
               </div>
               <div className="pb-7 flex flex-col">
                 <label htmlFor="subject" className="font-semibold">Subject</label>
-                <input type="text" name="subject" id="subject" className="border shadow rounded-sm p-1 w-full" />
+                <input type="text" name="subject" id="subject" className="border shadow rounded-sm p-1" />
               </div>
               <div className="flex flex-col pb-6">
                 <label htmlFor="message" className="required font-semibold">Message</label>
-                <textarea name="message" id="message" className={`border shadow rounded-sm p-1 w-full ${errorMessage.message ? 'border-red-500' : ''}`} onChange={({ target }) => setFormData({...formData, message: target.value})} ></textarea>
+                <textarea name="message" id="message" className={`border shadow rounded-sm p-1 ${errorMessage.message ? 'border-red-500' : ''}`} onChange={({ target }) => setFormData({...formData, message: target.value})} ></textarea>
                 {errorMessage.message && (
                   <span className="text-red-500 text-sm">{errorMessage.message}</span>
                 )}
               </div>
               <div className="flex flex-col">
                 <label htmlFor="attachment" className="required font-semibold">Attachment</label>
-                <input type="file" name="attachment" id="attachment" className={`border shadow rounded-sm p-1 w-full ${errorMessage.attachment ? 'border-red-500' : ''}`}
+                <input type="file" name="attachment" id="attachment" className={`border shadow rounded-sm p-1 ${errorMessage.attachment ? 'border-red-500' : ''}`}
                   accept="image/png, image/jpeg, image/jpg, .pdf" 
                   onChange={({ target }) => {
                     const file = target.files?.[0] || null
