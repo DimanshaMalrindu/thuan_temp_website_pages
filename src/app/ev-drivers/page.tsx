@@ -3,15 +3,12 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaAngleRight, FaShoppingCart } from 'react-icons/fa'
 
 type ChargingOption = 'mobile' | 'RFID' | 'one-time'
 
 export default function EVDriverPage() {
   const [chargingOption, setChargingOption] = useState<ChargingOption>('mobile')
   const [instruction, setInstruction] = useState<number>(1)
-
-  const options: ChargingOption[] = ['mobile', 'RFID', 'one-time']
 
   const handleChargingOption = (option: ChargingOption) => {
     setChargingOption(option)
